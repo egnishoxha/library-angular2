@@ -1,0 +1,78 @@
+<p>
+  book-detail works!
+</p>
+<div *ngIf="book">
+<div>Title: {{book.title}}</div>
+<div>Auhtor: {{book.author.fullName}}</div>
+</div>
+
+
+
+
+
+
+<div id="page-wrapper">
+    <!-- Sidenav menu-->
+    <sidenav-menu></sidenav-menu>
+    <!-- Page Content-->
+    <div class="page-content">
+        <!-- Filter commands-->
+        <nav id="page_commands">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-3 ui-md-3">
+                    <div class="ui-inputgroup global-search-container">
+                        <button id="add_entity_button" [routerLink]="['/books']" title="Books List" pButton icon=" fa-arrow-left" style="margin: 0px 8px;"></button>
+                    </div>
+                </div>
+                <div class="ui-g-4 ui-md-4">
+                    
+                </div>
+            </div>
+        </nav>
+        <!--Main Content-->
+        <main id="main_content">
+            <div class="table-container" id="entity_tab">
+                <div class="ui-g ui-fluid" *ngIf="book">
+                    <div class="ui-g-12 ui-md-3" style="text-align:center">
+                        <img class=img-circle [src]="bookImg">
+                    </div>
+                    <div class="ui-g-12 ui-md-12">
+                        <div class="ui-g">
+                            <div class="ui-g-2 ui-sm-6"><strong>Title:</strong></div>
+                            <div class="ui-g-10 ui-sm-6">{{book.title}}</div>
+                            
+                            <div class="ui-g-2 ui-sm-6"><strong>Author:</strong></div>
+                            <div class="ui-g-10 ui-sm-6">{{book.author.fullName}}</div>
+                            
+                            <div class="ui-g-2 ui-sm-6"><strong>Gendre:</strong></div>
+                            <div class="ui-g-10 ui-sm-6">{{book.gendre}}</div>
+
+                            <div class="ui-g-2 ui-sm-6"><strong>Literature:</strong></div>
+                            <div class="ui-g-10 ui-sm-6">{{book.lit}}</div>
+
+                            <div class="ui-g-2 ui-sm-6"><strong>Language:</strong></div>
+                            <div class="ui-g-10 ui-sm-6">{{book.lang}}</div>
+
+                            <div class="ui-g-2 ui-sm-6"><strong>No. of Pages:</strong></div>
+                            <div class="ui-g-10 ui-sm-6">{{book.page_no}}</div>
+
+                            <div class="ui-g-2 ui-sm-6"><strong>No. of Copies:</strong></div>
+                            <div class="ui-g-10 ui-sm-6">{{book.copies_no}}</div>
+
+                            <div class="ui-g-12 ui-sm-12">
+                                <!-- <div myUnderline>Hover to underline</div> -->
+                                <!-- <div *myIf="true">
+                                    Inside if
+                                </div> -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+
+

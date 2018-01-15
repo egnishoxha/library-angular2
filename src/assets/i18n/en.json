@@ -1,0 +1,13 @@
+{
+  "HOME": {
+    "TITLE": "Hello Angular with ngx-translate!",
+    "SELECT": "Change language",
+    "SEARCH": "Search"
+  },
+  "AUTHOR":{
+    "CHOOSE_AUTHOR": "Choose Author"
+  },
+  "BOOK":{
+    "CHOOSE_BOOK": "Choose Book"
+  }
+}

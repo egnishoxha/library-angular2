@@ -1,0 +1,88 @@
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #333;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+#prog_logo {
+    position: absolute;
+    top: 0;
+    height: 200px;
+    left: 0;
+    right: 0;
+    padding: 40px 20px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    width: 150px;
+}
+
+#menu_container {
+    position: relative;
+    top: 155px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+}
+
+#ul_style {
+    padding-left: 0;
+    text-align: left;
+}
+
+#menu_container li {
+    font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#menu_container a {
+    border-bottom: 1px solid #393939;
+    color: #ccc;
+    display: block;
+    margin: 0;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+#menu_container a:hover {
+    background: #2580a2 url("images/hover.gif") left center no-repeat;
+    color: #fff;
+    padding-bottom: 8px;
+}
+
+#menu_container a.active {
+    background: #1f89ce;
+    color: white;
+}
+
+#logout_ct {
+    position: absolute;
+    top: 550px;
+    padding: 8px 12px;
+    font-size: 24px;
+    color: #ccc;
+}
+#logout_ct a:link {
+    text-decoration: none;
+    color: #ccc;
+}
+#logout_ct a:visited {
+    color: #ccc;
+}
+#logout_ct a:hover {
+    color: #1f89ce;
+}
+
+#logout_ct a.active {
+    text-decoration: none;
+}

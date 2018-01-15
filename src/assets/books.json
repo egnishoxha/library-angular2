@@ -1,0 +1,21 @@
+[
+    {
+        "id": "1",
+        "title": "pallati i endrrave",
+        "author": "ismail kadare",
+        "page_no": "234",
+        "lang": "Albanian",
+        "gendre": "123",
+        "litt": "asd",
+        "copies_no": "2"
+    },{
+        "id": "2",
+        "title": "test2",
+        "author": "test2",
+        "page_no": "test2",
+        "lang": "English",
+        "gendre": "123",
+        "litt": "asd",
+        "copies_no": "3"
+    }
+]

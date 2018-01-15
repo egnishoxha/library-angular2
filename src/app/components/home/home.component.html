@@ -1,0 +1,39 @@
+<h1>List</h1>
+
+<div class="ui-g-12 ui-md-12">
+    <div class="ui-g">
+        <div class="ui-g-4 ui-md-4">
+            <div class="ui-g-12 ui-md-12" (click)="item='phone';arr=phones"> <span >Phones</span></div>
+        </div>
+        <div class="ui-g-4 ui-md-4">
+            <div class="ui-g-12 ui-md-12" (click)="item='car';arr=cars">Cars</div>
+        </div>
+        <div class="ui-g-4 ui-md-4">
+            <div class="ui-g-12 ui-md-12" (click)="item='computer';arr=computers">PC</div>
+        </div>
+        item clicked: {{item}}
+    </div>
+    <div class="ui-g">
+        <div [displaylist] = "arr" *ngFor="let x of arr" class="ui-g-12 ui-md-12">{{x}}</div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="ui-g">
+    <div class="ui-g-4 ui-md-4" displayOnClick>
+        <div class="ui-g-12 ui-md-12"> <span >Phones</span></div>
+        <div *ngFor="let phone of phones" class="ui-g-12 ui-md-12">{{phone}}</div>
+    </div>
+    <div class="ui-g-4 ui-md-4">
+        <div class="ui-g-12 ui-md-12">Cars</div>
+        <div *ngFor="let car of cars" class="ui-g-12 ui-md-12">{{car}}</div>
+    </div>
+    <div class="ui-g-4 ui-md-4">
+        <div class="ui-g-12 ui-md-12">PC</div>
+        <div *ngFor="let pc of computers" class="ui-g-12 ui-md-12">{{pc}}</div>
+    </div>
+</div> -->

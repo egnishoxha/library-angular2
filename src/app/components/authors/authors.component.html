@@ -1,0 +1,97 @@
+<div id="page-wrapper">
+    <!-- Sidenav menu-->
+    <sidenav-menu></sidenav-menu>
+    <!-- Page Content-->
+    <div class="page-content">
+        <!-- Filter commands-->
+        <nav id="page_commands">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-3 ui-md-3">
+                    <div class="ui-inputgroup global-search-container">
+                        <span class="ui-inputgroup-addon global-search-icon"><i class="fa fa-user"></i></span>
+                        <input class="global-search-input" #gb type="text" pInputText placeholder="{{ 'HOME.SEARCH' | translate}}">
+                    </div>
+                </div>
+                <div class="ui-g-1 ui-md-1">
+                
+                </div>
+            </div>
+        </nav>
+        <!--Main Content-->
+        <main id="main_content">
+            <!-- Elenco Utenti -->
+            <div class="table-container" id="entity_tab">
+                <p-dataTable [value]="authors" [immutable]=false dataKey="id" [globalFilter]="gb" #dt [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[2,4,10]">
+                    <p-header>Authors List <button id="add_entity_button" (click)="_dialogDisplayService.showDialog()" title="Add Book" pButton icon="fa-plus"></button></p-header>
+                    <p-column field="firstName" header="Name"></p-column>
+                    <p-column field="lastName" header="Surname"></p-column>                  
+                    <p-column field="nationality" header="Nationality"></p-column>
+                    <p-column field="gendre" header="Gendre"></p-column>
+                    <p-column header="Commands" [style]="{'text-align':'center'}">
+                        <ng-template let-entry="rowData" pTemplate="body" >
+                            <button (click)="showEditDialog(entry)" pButton title="Modify" icon="fa-edit"></button>
+                            <button (click)="removeAuthor(entry)" pButton title="Delete" icon="fa-trash"></button>
+                        </ng-template>
+                    </p-column>
+                </p-dataTable> 
+            </div>
+        </main>
+    </div>
+</div>
+<!-- Add Author Dialog  -->
+<p-dialog header="Add Author" [(visible)]="_dialogDisplayService.displayDialog" modal="modal" width="600" [responsive]="true">
+    <add-author-form></add-author-form>
+ </p-dialog>
+<!-- EDIT Dialog -->
+<p-dialog header="Edit Author" [(visible)]="displayEdit" modal="modal" width="600" [responsive]="true">
+    <div class="entity-form">
+        <form id="edit_id_form" (ngSubmit)="saveAuthor(f)" #f="ngForm">
+            <div class="ui-g ui-fluid input-form-container">
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Firstname" name="firstName" [(ngModel)]="authorEditRequest.firstName" #firstName="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+                      <b>Nationality is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Lastname" name="lastName" [(ngModel)]="authorEditRequest.lastName" #lastName="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+                      <b>Lastname is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Nationality" name="nationality" [(ngModel)]="authorEditRequest.nationality" #nationality="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="nationality.invalid && nationality.touched" class="text-danger">
+                      <b>Nationality is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Gendre" name="gendre" [(ngModel)]="authorEditRequest.gendre" #gendre="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="gendre.invalid && gendre.touched" class="text-danger">
+                      <b>Gendre is mandatory!</b>
+                    </small>
+                </div>
+            </div>
+            <p-footer>
+                <button type="submit" [disabled]="f.invalid" pButton icon="fa-check" label="Salva"></button>
+                <button type="button" pButton icon="fa-close" (click)="hideEditDialog()" label="Cancella"></button>
+            </p-footer>
+        </form>
+    </div>
+</p-dialog>
+<!--Dialog Confirm-->
+<p-confirmDialog header="Confirm" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+
+

@@ -1,0 +1,129 @@
+<div id="page-wrapper">
+    <!-- Sidenav menu-->
+    <sidenav-menu></sidenav-menu>
+    <!-- Page Content-->
+    <div class="page-content">
+        <!-- Filter commands-->
+        <nav id="page_commands">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-3 ui-md-3">
+                    <div class="ui-inputgroup global-search-container">
+                        <span class="ui-inputgroup-addon global-search-icon"><i class="fa fa-book"></i></span>
+                        <input class="global-search-input" #gb type="text" pInputText placeholder="{{ 'HOME.SEARCH' | translate}}">
+                    </div>
+                </div>
+                <div class="ui-g-1 ui-md-1">
+                    <select class="dropdown-style" ngModel name="selectedAuthor" (ngModelChange)="onChangeAuthor($event)">
+                        <option selected value="">{{ 'AUTHOR.CHOOSE_AUTHOR' | translate }}</option> 
+                        <option *ngFor="let author of authors" [ngValue]="author">
+                            {{author.fullName}}
+                        </option>
+                    </select>
+                </div>
+                <div class="ui-g-3 ui-md-3">
+                </div>
+            </div>
+        </nav>
+        <!--Main Content-->
+        <main id="main_content">
+            <!-- Elenco Utenti -->
+            <div class="table-container" id="entity_tab">
+                <p-dataTable [value]="books" [immutable]=false dataKey="id" [globalFilter]="gb" #dt [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[2,4,10]">
+                    <p-header>Book List <button id="add_entity_button" (click)="_dialogDisplayService.showDialog()" title="Add Book" pButton icon="fa-plus"></button></p-header>
+                    <p-column field="title" header="Title"></p-column>
+                    <p-column field="author.fullName" header="Author"></p-column>
+                    <p-column field="page_no" header="Page No."></p-column>
+                    <p-column header="Commands" [style]="{'text-align':'center'}">
+                        <ng-template let-entry="rowData" pTemplate="body" >
+                            <button (click)="bookCommands('edit', entry)" pButton title="Edit" icon="fa-edit"></button>
+                            <button (click)="bookCommands('del', entry)" pButton title="Delete" icon="fa-trash"></button>
+                            <button [routerLink]="['/books', entry.id]" pButton title="Detail" icon="fa-eye"></button>
+                        </ng-template>
+                    </p-column>
+                </p-dataTable>
+            </div>
+        </main>
+    </div>
+</div>
+<!-- Add Book Dialog  -->
+<p-dialog header="Add Book" [(visible)]="_dialogDisplayService.displayDialog" modal="modal" width="600" [responsive]="true">
+    <add-book-form></add-book-form>
+</p-dialog>
+<!-- EDIT Dialog -->
+<p-dialog header="Edit Book" [(visible)]="displayEdit" modal="modal" width="600" [responsive]="true">
+    <div class="entity-form">
+        <form id="edit_id_form" (ngSubmit)="saveBook(f)" #f="ngForm">
+            <div class="ui-g ui-fluid input-form-container">
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Title" name="title" [(ngModel)]="bookEditRequest.title" #title="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="title.invalid && title.touched" class="text-danger">
+                        <b>Title is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <select class="dropdown-style" name="authorId" [(ngModel)]="bookEditRequest.authorId" required>
+                        <option value="null" selected disabled>Choose Author</option>
+                        <option *ngFor="let author of authors" [ngValue]="author.id">
+                            {{author.firstName + " " + author.lastName}}
+                        </option>
+                    </select>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="number" min="1" pInputText placeholder="Page No." name="page_no" [(ngModel)]="bookEditRequest.page_no" #page_no="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="page_no.invalid && page_no.touched" class="text-danger">
+                        <b>Page Number is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Language" name="lang" [(ngModel)]="bookEditRequest.lang" #lang="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="lang.invalid && lang.touched" class="text-danger">
+                        <b>Language is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Gendre" name="gendre" [(ngModel)]="bookEditRequest.gendre" #gendre="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="gendre.invalid && gendre.touched" class="text-danger">
+                        <b>Gendre is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Literature" name="lit" [(ngModel)]="bookEditRequest.lit" #lit="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="lit.invalid && lit.touched" class="text-danger">
+                        <b>Gendre is mandatory!</b>
+                    </small>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="number" min="1" pInputText placeholder="Copies No." name="copies_no" [(ngModel)]="bookEditRequest.copies_no" #copies_no="ngModel" required>
+                </div>
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <small *ngIf="copies_no.invalid && copies_no.touched" class="text-danger">
+                        <b>Copies Number is mandatory!</b>
+                    </small>
+                </div>
+            </div>
+            <p-footer>
+                <button type="submit" [disabled]="f.invalid" pButton icon="fa-check" label="Salva"></button>
+                <button type="button" pButton icon="fa-close" (click)="hideEditDialog()" label="Cancella"></button>
+            </p-footer>
+        </form>
+    </div>
+</p-dialog>
+<!--Dialog Confirm-->
+<p-confirmDialog header="Confirm" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+

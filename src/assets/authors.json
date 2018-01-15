@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "firstName": "paulo",
+        "lastName": "coelho",
+        "fullName": "paulo coelho",
+        "gendre": "male",
+        "nationality": "brazilian"
+      },
+      {
+        "id": 2,
+        "firstName": "stefan",
+        "lastName": "zweig",
+        "fullName": "stefan zweig",
+        "gendre": "male",
+        "nationality": "austrian"
+      }
+]

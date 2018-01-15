@@ -1,0 +1,52 @@
+<div class="entity-form">
+    <form id="add_user_form" (ngSubmit)="addAuthor(f.value, f.valid,f)" #f="ngForm" novalidate>
+        <div class="ui-g ui-fluid input-form-container">
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" pInputText placeholder="Firstname" name="firstName" [(ngModel)]="authorCreateRequest.firstName" #firstName="ngModel" required>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+                    <b>FirstName is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-g-12 ui-md-12">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Lastname" name="lastName" [(ngModel)]="authorCreateRequest.lastName" #lastName="ngModel" required>
+                </div>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+                    <b>LastName is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-g-12 ui-md-12">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Nationality" name="nationality" [(ngModel)]="authorCreateRequest.nationality" #nationality="ngModel" required>
+                </div>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="nationality.invalid && nationality.touched"  class="text-danger">
+                    <b>Nationality is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-g-12 ui-md-12">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" pInputText placeholder="Gendre" name="gendre" [(ngModel)]="authorCreateRequest.gendre" #gendre="ngModel" required>
+                </div>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="gendre.invalid && gendre.touched" class="text-danger">
+                    <b>Gendre is mandatory!</b>
+                </small>
+            </div>
+        </div>
+        <p-footer>
+            <button type="submit" [disabled]="f.invalid" pButton icon="fa-check" label="Save"></button>
+            <button type="reset" pButton icon="fa-close" (click)="_dialogDisplayService.hideDialog()" label="Cancel"></button>
+        </p-footer>
+    </form>
+</div>

@@ -1,0 +1,203 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    /*font-family: "Roboto", "Arial", "Helvetica", "Lato", sans-serif;*/
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+}
+
+/** Page Structure **/
+#page-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #E9E9E9; /*#d8d7d7;*/
+}
+
+.page-content {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#page_commands {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: 24px 15px;
+    border-bottom: 1px solid #C6BFBF;
+    background:#fff;
+    /*box-shadow: 0px 2px 5px #888888;*/
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#main_content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 50px);
+    padding-top: 20px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+/** Page elements **/
+    .entity-form {
+    padding: 3em 2em 2em 2em;
+}
+
+.center-title {
+    width: 380px;
+    margin: 4em auto;
+    padding: 3em 2em 2em 2em;
+    text-align: center;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: #fafafa;
+    color: #636363;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+}
+
+.global-search-container {
+    height: 28px;
+}
+
+.global-search-icon {
+    height: 25px;
+}
+#add_container {
+    padding: 8px 80px;
+}
+.global-search-input {
+    height: 35px;
+    padding: 6px;
+    border-bottom: 0;
+}
+
+#add_entity_button {
+    width: 55px;
+    height: 35px; /*28px;*/
+    float: right;
+    margin: -5px 0;
+}
+
+.table-container {
+    position: absolute;
+    padding: 0 10px;
+    /*width: 84%;*/
+    height: 100%;
+    font-size: 16px;
+    margin-right: 200px;
+    overflow-y:scroll;
+}
+
+.input-form-container {
+    padding-bottom: 25px;
+}
+
+.center-item {
+    width: 380px;
+    margin: 4em auto;
+    padding: 3em 2em 2em 2em;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
+.center-title {
+    width: 380px;
+    margin: 1em auto; 
+    padding: 3em 2em 2em 2em;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: "Roboto";
+}
+
+.dropdown-style {
+    /*height: 28px;*/
+    height: 35px;
+    border: 1px solid #79b7e7;
+}
+
+.text-danger {
+    color: red;
+}
+
+
+
+
+.login-body .login-panel {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 0px;
+    background-color: #ffffff;
+    margin-top: 125px;
+}
+
+.login-body .login-panel .ui-g-12.logo-container {
+    padding: 50px 50px 25px 50px;
+    border-bottom: 8px solid #dee4e9;
+    margin-bottom: 20px;
+}
+.login-body .login-panel .ui-g-12.logo-container .logo {
+    height: 50px;
+}
+    .login-body .login-panel .ui-g-12.logo-container .login-icon {
+        float: right;
+        height: 50px;
+    }
+
+#entity_tab .ui-widget-header {
+    background: #fff;
+    color: #1f89ce;
+    border: 1px solid #f7f7f9;
+}
+#entity_tab .ui-datatable .ui-datatable-thead > tr > th, .ui-datatable .ui-datatable-tfoot > tr > td, .ui-datatable .ui-datatable-data > tr > td {
+    border: 1px solid #ddd !important;
+}
+#entity_tab .ui-datatable-header {
+    text-align: left;
+    font-size: 20px;
+}

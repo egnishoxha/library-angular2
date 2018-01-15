@@ -1,0 +1,30 @@
+<div id="page-wrapper">
+    <div class="center-title">
+        <h2>Test</h2><!-- Library Management System -->
+        <p>Test</p>
+    </div>
+    <div class="center-item">
+        <!-- Login Form -->
+        <form (ngSubmit)="login(f.value, f.valid,f)" #f="ngForm" novalidate> 
+            <div class="ui-g ui-fluid">
+                <div class="ui-inputgroup ui-g-12 ui-md-12">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" placeholder="Username" [(ngModel)]="userSearchRequest.userName" #userName="ngModel"  name="userName" required>
+                </div>
+                <div class="ui-g-12 ui-md-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                        <input type="password" placeholder="Password" [(ngModel)]="userSearchRequest.password" #password="ngModel" name="password" required>
+                    </div>
+                </div>
+            </div>
+            <p>
+                <button [disabled]="f.invalid" pButton id="submitbutton" type="submit" label="Sign in"></button>
+                <button pButton type="reset" label="Cancel"></button>
+                <!-- <a class="btn btn-primary" [routerLink]="['/register']" >Register</a> -->
+                <button [routerLink]="['/register']" label="Register" pButton style="margin: 0px 46px;"></button>
+            </p>
+        </form>
+    </div>
+</div>
+

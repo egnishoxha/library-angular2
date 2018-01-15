@@ -1,0 +1,72 @@
+<div class="entity-form">
+    <form id="add_user_form" (ngSubmit)="addBook(f.value, f.valid,f)" #f="ngForm" novalidate>
+        <div class="ui-g ui-fluid input-form-container">
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" pInputText placeholder="Title" name="title" [(ngModel)]="bookCreateRequest.title" #title="ngModel" required>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="title.invalid && title.touched" class="text-danger">
+                    <b>Title is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <select class="dropdown-style" name="authorId" [(ngModel)]="bookCreateRequest.authorId" required>
+                    <option value="null" selected disabled>Choose Author</option>
+                    <option *ngFor="let author of authors" [ngValue]="author.id">
+                        {{author.firstName + " " + author.lastName}}
+                    </option>
+                </select>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="number" min="1" pInputText placeholder="Page No." name="page_no" [(ngModel)]="bookCreateRequest.page_no" #page_no="ngModel" required>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="page_no.invalid && page_no.touched" class="text-danger">
+                    <b>Page Number is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" pInputText placeholder="Language" name="lang" [(ngModel)]="bookCreateRequest.lang" #lang="ngModel" required>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="lang.invalid && lang.touched" class="text-danger">
+                    <b>Language is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" pInputText placeholder="Gendre" name="gendre" [(ngModel)]="bookCreateRequest.gendre" #gendre="ngModel" required>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="gendre.invalid && gendre.touched" class="text-danger">
+                    <b>Gendre is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" pInputText placeholder="Literature" name="lit" [(ngModel)]="bookCreateRequest.lit" #lit="ngModel" required>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="lit.invalid && lit.touched" class="text-danger">
+                    <b>Gendre is mandatory!</b>
+                </small>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="number" min="1" pInputText placeholder="Copies No." name="copies_no" [(ngModel)]="bookCreateRequest.copies_no" #copies_no="ngModel" required>
+            </div>
+            <div class="ui-inputgroup ui-g-12 ui-md-12">
+                <small *ngIf="copies_no.invalid && copies_no.touched" class="text-danger">
+                    <b>Copies Number is mandatory!</b>
+                </small>
+            </div>       
+        </div>
+        <p-footer>
+            <button type="submit" [disabled]="f.invalid" pButton icon="fa-check" label="Save"></button>
+            <button type="reset" pButton icon="fa-close" (click)="_dialogDisplayService.hideDialog()" label="Cancel"></button>
+        </p-footer>
+    </form>
+</div>
