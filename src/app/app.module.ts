@@ -36,7 +36,6 @@ import { AuthorsComponent } from './components/authors/authors.component';
 import { AddAuthorFormComponent } from './directives/add-author-form/add-author-form.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddBookFormComponent } from './directives/add-book-form/add-book-form.component';
-import { HomeComponent } from './components/home/home.component';
 import { BookDetailComponent } from './components/books/book-detail/book-detail.component';
 
 // AoT requires an exported function for factories
@@ -57,7 +56,6 @@ export function TranslateCacheFactory(translateService, translateCacheSettings) 
     AddAuthorFormComponent,
     RegisterComponent,
     AddBookFormComponent,
-    HomeComponent,
     BookDetailComponent
   ],
   imports: [
