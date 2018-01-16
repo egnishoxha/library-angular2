@@ -67,7 +67,7 @@
 
 #logout_ct {
     position: absolute;
-    top: 550px;
+    top: 375px;
     padding: 8px 12px;
     font-size: 24px;
     color: #ccc;
@@ -85,4 +85,35 @@
 
 #logout_ct a.active {
     text-decoration: none;
+}
+
+#lang_ct {
+    position: absolute;
+    top: 290px;
+    padding: 20px 12px;
+    color: #ccc;
+}
+#lang_ct ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #333;
+}
+
+#lang_ct ul > li {
+    float: left;
+}
+
+#lang_ct ul > li a {
+    display: block;
+    color: #ccc;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#lang_ct ul > li a:hover {
+   background: #2580a2;
+   color: #fff;
 }

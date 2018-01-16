@@ -15,8 +15,10 @@
     <div id="logout_ct">
         <i class="fa fa-sign-out"></i>
         <a [routerLink]="['/login']">{{'HOME.SIGNOUT' | translate}}</a>
+    </div>
+    <div id="lang_ct">
         <ul>
-            <li><a (click)="switchLanguage('fr')">FR</a></li>                
+            <li><a (click)="switchLanguage('fr')">FR</a></li>                    
             <li><a (click)="switchLanguage('en')">EN</a></li>
         </ul>
     </div>
