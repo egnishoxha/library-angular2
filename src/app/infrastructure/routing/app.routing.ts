@@ -8,7 +8,6 @@ import { LoginComponent } from "./../../components/login/login.component";
 import { BooksComponent } from "./../../components/books/books.component";
 import { BookDetailComponent } from "./../../components/books/book-detail/book-detail.component";
 import { AuthorsComponent } from "./../../components/authors/authors.component";
-import { HomeComponent } from "./../../components/home/home.component";
 
 const appRoutes: Routes = [
     { path: "login", component: LoginComponent },
