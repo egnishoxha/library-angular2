@@ -4,5 +4,14 @@ export interface IUserSearchRequest {
     /**
     * 
     */
+    
     password?: string;
+    /**
+    * 
+    */
+    firstName?: string;
+    /**
+    * 
+    */
+    lastName?: string;
 }
