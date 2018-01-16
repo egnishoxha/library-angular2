@@ -21,6 +21,7 @@
     "GENDRE":"Gendre"
   },
   "BOOK":{
+    "BOOK_LIST": "Books List",
     "CHOOSE_BOOK": "Choose Book",
     "ADD_BOOK": "Add Book",
     "EDIT_BOOK": "Edit Book",
@@ -30,6 +31,6 @@
     "PAGE_NO": "Page No.",
     "LIT": "Literature",
     "COPIES_NO":"Copies No.",
-    "LANGUAGE": "Language",
+    "LANGUAGE": "Language"
   }
 }

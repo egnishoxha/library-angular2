@@ -21,6 +21,7 @@
         "GENDRE":"Genre"
       },
       "BOOK":{
+        "BOOK_LIST": "Liste Livres",
         "CHOOSE_BOOK": "Choisir Livre",
         "ADD_BOOK": "Ajouter Livre",
         "EDIT_BOOK": "Modifier Livre",
