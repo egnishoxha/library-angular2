@@ -4,7 +4,8 @@
     "SELECT": "Change language",
     "SEARCH": "Search",
     "COMMANDS":"Commands",
-    "CONFIRM": "Confirm"
+    "CONFIRM": "Confirm",
+    "SIGNOUT": "Sign Out"
   },
   "AUTHOR":{
     "AUTHOR_LIST": "Authors List",
@@ -26,6 +27,9 @@
     "DELETE_BOOK": "Delete Book",
     "DETAIL_BOOK": "Book Detail",
     "TITLE": "Title",
-    "PAGE_NO": "Page No."
+    "PAGE_NO": "Page No.",
+    "LIT": "Literature",
+    "COPIES_NO":"Copies No.",
+    "LANGUAGE": "Language",
   }
 }

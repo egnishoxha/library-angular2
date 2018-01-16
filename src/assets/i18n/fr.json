@@ -4,7 +4,8 @@
         "SELECT": "Changer la langue",
         "SEARCH": "Chercher",
         "COMMANDS":"Commandes",
-        "CONFIRM": "Confirmer"
+        "CONFIRM": "Confirmer",
+        "SIGNOUT": "Sortir"
     },
     "AUTHOR":{
         "AUTHOR_LIST": "Liste Auteurs",        
@@ -26,6 +27,9 @@
         "DELETE_BOOK": "Effacer Livre",
         "DETAIL_BOOK": "Détail Livre",
         "TITLE": "Titre",
-        "PAGE_NO": "No. de Pages"
+        "PAGE_NO": "No. de Pages",
+        "LIT": "Littérature",
+        "COPIES_NO":"Copies No.",
+        "LANGUAGE": "Langage"
       }
 }

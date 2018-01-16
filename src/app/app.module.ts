@@ -38,7 +38,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { AddBookFormComponent } from './directives/add-book-form/add-book-form.component';
 import { HomeComponent } from './components/home/home.component';
 import { BookDetailComponent } from './components/books/book-detail/book-detail.component';
-import { HiddenDirectiveDirective } from './directives/hidden-directive/hidden-directive.directive';
 
 // AoT requires an exported function for factories
 export function httpLoaderFactory(http: HttpClient) {
@@ -59,8 +58,7 @@ export function TranslateCacheFactory(translateService, translateCacheSettings) 
     RegisterComponent,
     AddBookFormComponent,
     HomeComponent,
-    BookDetailComponent,
-    HiddenDirectiveDirective
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
