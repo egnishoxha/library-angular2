@@ -28,9 +28,9 @@ export class BooksComponent implements OnInit {
     bookId: number;
     
     constructor(
-        private _userService: UserService,        
-        private _dialogDisplayService: DialogDisplayService,
-        private _confirmationService: ConfirmationService
+        public _userService: UserService,        
+        public _dialogDisplayService: DialogDisplayService,
+        public _confirmationService: ConfirmationService
   ) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));    
   }

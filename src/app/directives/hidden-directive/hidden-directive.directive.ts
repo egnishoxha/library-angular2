@@ -7,8 +7,8 @@ import { Directive, HostListener, Renderer, ElementRef, Input } from '@angular/c
 export class HiddenDirectiveDirective {
 
     constructor(
-      private renderer: Renderer,
-      private el: ElementRef
+      public renderer: Renderer,
+      public el: ElementRef
     ){
 
     }

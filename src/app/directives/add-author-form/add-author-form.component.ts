@@ -20,8 +20,8 @@ export class AddAuthorFormComponent implements OnInit {
     isVisible: boolean = false;
     
     constructor(
-        private _dialogDisplayService: DialogDisplayService,
-        private _userService: UserService    
+        public _dialogDisplayService: DialogDisplayService,
+        public _userService: UserService    
     ) { 
 
     }

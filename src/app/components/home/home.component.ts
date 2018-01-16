@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   currentUser: User; 
 
   constructor(
-      private _route: ActivatedRoute,
-      private _router: Router,
+      public _route: ActivatedRoute,
+      public _router: Router,
   ) { 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }

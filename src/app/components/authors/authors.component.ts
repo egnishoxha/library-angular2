@@ -25,9 +25,9 @@ export class AuthorsComponent implements OnInit {
     refreshTab: boolean = false;
 
     constructor(
-        private _userService: UserService,
-        private _confirmationService: ConfirmationService,
-        private _dialogDisplayService: DialogDisplayService        
+        public _userService: UserService,
+        public _confirmationService: ConfirmationService,
+        public _dialogDisplayService: DialogDisplayService        
     ) {
 
     }

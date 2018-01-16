@@ -25,11 +25,11 @@ export class BookDetailComponent implements OnInit {
     val: boolean;
 
     constructor(
-        private _route: ActivatedRoute,
-        private _router: Router,
-        private _userService: UserService,        
-        private _dialogDisplayService: DialogDisplayService,
-        private _confirmationService: ConfirmationService
+        public _route: ActivatedRoute,
+        public _router: Router,
+        public _userService: UserService,        
+        public _dialogDisplayService: DialogDisplayService,
+        public _confirmationService: ConfirmationService
     ) { 
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }

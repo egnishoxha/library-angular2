@@ -22,11 +22,11 @@ export class LoginComponent implements OnInit {
     userSearchRequest: IUserSearchRequest = {};
     
     constructor(
-      private _router: Router,
-      private _route: ActivatedRoute,
-      private _authenticationService: AuthenticationService,
-      private _langService: LangService,
-      private _userSevice: UserService      
+        public _router: Router,
+        public _route: ActivatedRoute,
+        public _authenticationService: AuthenticationService,
+        public _langService: LangService,
+        public _userSevice: UserService      
       
     ) { }
 

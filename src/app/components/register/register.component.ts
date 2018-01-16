@@ -18,9 +18,9 @@ export class RegisterComponent implements OnInit {
     userSearchRequest: IUserSearchRequest = {};
 
     constructor(
-        private _router: Router,
-        private _route: ActivatedRoute,
-        private _userService: UserService    
+        public _router: Router,
+        public _route: ActivatedRoute,
+        public _userService: UserService    
     ) { 
         
     }

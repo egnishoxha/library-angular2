@@ -13,8 +13,8 @@ export class MenuComponent implements OnInit {
     logoPath: string;
   
     constructor(
-        private _translateService: TranslateService,
-        private _langService: LangService
+        public _translateService: TranslateService,
+        public _langService: LangService
     ) {
         //check for current lang set, otherwise pick up French language by default
         if (_langService.getLang) {
