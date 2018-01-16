@@ -18,10 +18,10 @@ import { DialogDisplayService } from "../../infrastructure/services/clientAPI/di
 
 export class AuthorsComponent implements OnInit {
     
-    private authors: IAuthor[] = [];
-    private authorId: number;
+    authors: IAuthor[] = [];
+    authorId: number;
     private authorEditRequest: IAuthorAddEditRequest = {};
-    private displayEdit: boolean = false;
+    displayEdit: boolean = false;
     refreshTab: boolean = false;
 
     constructor(

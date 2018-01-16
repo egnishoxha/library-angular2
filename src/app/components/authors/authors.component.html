@@ -22,15 +22,15 @@
             <!-- Elenco Utenti -->
             <div class="table-container" id="entity_tab">
                 <p-dataTable [value]="authors" [immutable]=false dataKey="id" [globalFilter]="gb" #dt [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[2,4,10]">
-                    <p-header>Authors List <button id="add_entity_button" (click)="_dialogDisplayService.showDialog()" title="Add Book" pButton icon="fa-plus"></button></p-header>
-                    <p-column field="firstName" header="Name"></p-column>
-                    <p-column field="lastName" header="Surname"></p-column>                  
-                    <p-column field="nationality" header="Nationality"></p-column>
-                    <p-column field="gendre" header="Gendre"></p-column>
-                    <p-column header="Commands" [style]="{'text-align':'center'}">
+                    <p-header>{{'AUTHOR.AUTHOR_LIST' | translate}}<button id="add_entity_button" (click)="_dialogDisplayService.showDialog()" title="{{'AUTHOR.ADD_AUTHOR' | translate}}" pButton icon="fa-plus"></button></p-header>
+                    <p-column field="firstName" header="{{'AUTHOR.FIRSTNAME' | translate}}"></p-column>
+                    <p-column field="lastName" header="{{'AUTHOR.LASTNAME' | translate}}"></p-column>                  
+                    <p-column field="nationality" header="{{'AUTHOR.NATIONALITY' | translate}}"></p-column>
+                    <p-column field="gendre" header="{{'AUTHOR.GENDRE' | translate}}"></p-column>
+                    <p-column header="{{'HOME.COMMANDS' | translate}}" [style]="{'text-align':'center'}">
                         <ng-template let-entry="rowData" pTemplate="body" >
-                            <button (click)="showEditDialog(entry)" pButton title="Modify" icon="fa-edit"></button>
-                            <button (click)="removeAuthor(entry)" pButton title="Delete" icon="fa-trash"></button>
+                            <button (click)="showEditDialog(entry)" pButton title="{{'AUTHOR.EDIT_AUTHOR' | translate}}" icon="fa-edit"></button>
+                            <button (click)="removeAuthor(entry)" pButton title="{{'AUTHOR.DELETE_AUTHOR' | translate}}" icon="fa-trash"></button>
                         </ng-template>
                     </p-column>
                 </p-dataTable> 
@@ -39,11 +39,11 @@
     </div>
 </div>
 <!-- Add Author Dialog  -->
-<p-dialog header="Add Author" [(visible)]="_dialogDisplayService.displayDialog" modal="modal" width="600" [responsive]="true">
+<p-dialog header="{{'AUTHOR.ADD_AUTHOR' | translate}}" [(visible)]="_dialogDisplayService.displayDialog" modal="modal" width="600" [responsive]="true">
     <add-author-form></add-author-form>
  </p-dialog>
 <!-- EDIT Dialog -->
-<p-dialog header="Edit Author" [(visible)]="displayEdit" modal="modal" width="600" [responsive]="true">
+<p-dialog header="{{'AUTHOR.EDIT_AUTHOR' | translate}}" [(visible)]="displayEdit" modal="modal" width="600" [responsive]="true">
     <div class="entity-form">
         <form id="edit_id_form" (ngSubmit)="saveAuthor(f)" #f="ngForm">
             <div class="ui-g ui-fluid input-form-container">
@@ -92,6 +92,6 @@
     </div>
 </p-dialog>
 <!--Dialog Confirm-->
-<p-confirmDialog header="Confirm" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+<p-confirmDialog header="{{'HOME.CONFIRM' | translate}}" icon="fa fa-question-circle" width="425"></p-confirmDialog>
 
 

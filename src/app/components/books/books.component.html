@@ -29,15 +29,15 @@
             <!-- Elenco Utenti -->
             <div class="table-container" id="entity_tab">
                 <p-dataTable [value]="books" [immutable]=false dataKey="id" [globalFilter]="gb" #dt [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[2,4,10]">
-                    <p-header>Book List <button id="add_entity_button" (click)="_dialogDisplayService.showDialog()" title="Add Book" pButton icon="fa-plus"></button></p-header>
+                    <p-header>Book List <button id="add_entity_button" (click)="_dialogDisplayService.showDialog()" title="{{'BOOK.ADD_BOOK' | translate}}" pButton icon="fa-plus"></button></p-header>
                     <p-column field="title" header="Title"></p-column>
-                    <p-column field="author.fullName" header="Author"></p-column>
+                    <p-column field="author.fullName" header="{{'AUTHOR.FULLNAME' | translate}}"></p-column>
                     <p-column field="page_no" header="Page No."></p-column>
                     <p-column header="Commands" [style]="{'text-align':'center'}">
                         <ng-template let-entry="rowData" pTemplate="body" >
-                            <button (click)="bookCommands('edit', entry)" pButton title="Edit" icon="fa-edit"></button>
-                            <button (click)="bookCommands('del', entry)" pButton title="Delete" icon="fa-trash"></button>
-                            <button [routerLink]="['/books', entry.id]" pButton title="Detail" icon="fa-eye"></button>
+                            <button (click)="bookCommands('edit', entry)" pButton title="{{'BOOK.EDIT_BOOK' | translate}}" icon="fa-edit"></button>
+                            <button (click)="bookCommands('del', entry)" pButton title="{{'BOOK.DELETE_BOOK' | translate}}" icon="fa-trash"></button>
+                            <button [routerLink]="['/books', entry.id]" pButton title="{{'BOOK.BOOK_DETAIL' | translate}}" icon="fa-eye"></button>
                         </ng-template>
                     </p-column>
                 </p-dataTable>
@@ -46,11 +46,11 @@
     </div>
 </div>
 <!-- Add Book Dialog  -->
-<p-dialog header="Add Book" [(visible)]="_dialogDisplayService.displayDialog" modal="modal" width="600" [responsive]="true">
+<p-dialog header="{{'BOOK.ADD_BOOK' | translate}}" [(visible)]="_dialogDisplayService.displayDialog" modal="modal" width="600" [responsive]="true">
     <add-book-form></add-book-form>
 </p-dialog>
 <!-- EDIT Dialog -->
-<p-dialog header="Edit Book" [(visible)]="displayEdit" modal="modal" width="600" [responsive]="true">
+<p-dialog header="{{'BOOK.EDIT_BOOK' | translate}}" [(visible)]="displayEdit" modal="modal" width="600" [responsive]="true">
     <div class="entity-form">
         <form id="edit_id_form" (ngSubmit)="saveBook(f)" #f="ngForm">
             <div class="ui-g ui-fluid input-form-container">
@@ -125,5 +125,5 @@
     </div>
 </p-dialog>
 <!--Dialog Confirm-->
-<p-confirmDialog header="Confirm" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+<p-confirmDialog header="{{'HOME.CONFIRM' | translate}}" icon="fa fa-question-circle" width="425"></p-confirmDialog>
 

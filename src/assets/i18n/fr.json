@@ -2,12 +2,30 @@
     "HOME": {
         "TITLE": "Bonjour Angular avec ngx-translate !",
         "SELECT": "Changer la langue",
-        "SEARCH": "Chercher"
+        "SEARCH": "Chercher",
+        "COMMANDS":"Commandes",
+        "CONFIRM": "Confirmer"
     },
     "AUTHOR":{
-        "CHOOSE_AUTHOR": "Choisissez l'auteur"
-    },
-    "BOOK":{
-        "CHOOSE_BOOK": "Choisissez le livre"
+        "AUTHOR_LIST": "Liste Auteurs",        
+        "CHOOSE_AUTHOR": "Choisir Auteur",
+        "ADD_AUTHOR": "Ajouter Auteur",
+        "EDIT_AUTHOR": "Modifier Auteur",
+        "DELETE_AUTHOR": "Éliminer Auteur",
+        "DETAIL_AUTHOR": "Détail Auteur",
+        "FIRSTNAME":"Prénom",
+        "LASTNAME":"Nom",
+        "FULLNAME":"Auteur",
+        "NATIONALITY":"Nationalité",
+        "GENDRE":"Genre"
+      },
+      "BOOK":{
+        "CHOOSE_BOOK": "Choisir Livre",
+        "ADD_BOOK": "Ajouter Livre",
+        "EDIT_BOOK": "Modifier Livre",
+        "DELETE_BOOK": "Effacer Livre",
+        "DETAIL_BOOK": "Détail Livre",
+        "TITLE": "Titre",
+        "PAGE_NO": "No. de Pages"
       }
 }
