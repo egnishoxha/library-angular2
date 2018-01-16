@@ -15,7 +15,6 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent }, 
     { path: "books", component: BooksComponent, canActivate: [AuthGuard]},  
     { path: "authors", component: AuthorsComponent, canActivate: [AuthGuard] },
-    { path: "home", component: HomeComponent, canActivate: [AuthGuard] },
     {
         path: "books/:id", component: BookDetailComponent, canActivate: [AuthGuard]
     },
