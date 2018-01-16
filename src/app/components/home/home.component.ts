@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   item: string;
   arr:any[] = [];
 
-  private currentUser: User; 
+  currentUser: User; 
 
   constructor(
       private _route: ActivatedRoute,

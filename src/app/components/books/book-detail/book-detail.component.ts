@@ -19,9 +19,9 @@ import { IBookAddEditRequest } from "./../../../infrastructure/services/webAPI/B
 
 export class BookDetailComponent implements OnInit {
 
-    private book: IBook;
-    private currentUser: User;
-    private bookImg: string;
+    book: IBook;
+    currentUser: User;
+    bookImg: string;
     val: boolean;
 
     constructor(

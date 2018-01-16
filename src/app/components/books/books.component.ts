@@ -19,13 +19,13 @@ import { IBookAddEditRequest } from "./../../infrastructure/services/webAPI/Book
 
 export class BooksComponent implements OnInit {
 
-    private books:IBook[] = [];
-    private authors:IAuthor[] = [];
-    private users:any[] = [];
-    private selectedAuthor: Object = {};
-    private currentUser: User;
-    private bookEditRequest: IBookAddEditRequest = {};  
-    private bookId: number;
+    books:IBook[] = [];
+    authors:IAuthor[] = [];
+    users:any[] = [];
+    selectedAuthor: Object = {};
+    currentUser: User;
+    bookEditRequest: IBookAddEditRequest = {};  
+    bookId: number;
     
     constructor(
         private _userService: UserService,        

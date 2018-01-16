@@ -15,9 +15,9 @@ import { DialogDisplayService } from "../../infrastructure/services/clientAPI/di
 
 export class AddAuthorFormComponent implements OnInit {
 
-    private authorCreateRequest: IAuthorAddEditRequest = {};  
-    private authors: IAuthor[] = [];
-    private isVisible: boolean = false;
+    authorCreateRequest: IAuthorAddEditRequest = {};  
+    authors: IAuthor[] = [];
+    isVisible: boolean = false;
     
     constructor(
         private _dialogDisplayService: DialogDisplayService,

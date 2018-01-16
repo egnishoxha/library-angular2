@@ -18,8 +18,8 @@ import { UserService } from "../../infrastructure/services/webAPI/user.service";
 export class LoginComponent implements OnInit {
     
     returnUrl: string;
-    private user: User;
-    private userSearchRequest: IUserSearchRequest = {};
+    user: User;
+    userSearchRequest: IUserSearchRequest = {};
     
     constructor(
       private _router: Router,

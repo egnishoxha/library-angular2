@@ -20,7 +20,7 @@ export class AuthorsComponent implements OnInit {
     
     authors: IAuthor[] = [];
     authorId: number;
-    private authorEditRequest: IAuthorAddEditRequest = {};
+    authorEditRequest: IAuthorAddEditRequest = {};
     displayEdit: boolean = false;
     refreshTab: boolean = false;
 

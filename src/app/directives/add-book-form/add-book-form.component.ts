@@ -14,9 +14,9 @@ import { UserService } from "./../../infrastructure/services/webAPI/user.service
 
 export class AddBookFormComponent implements OnInit {
 
-    private bookCreateRequest: IBookAddEditRequest = {};  
-    private books: IBook[] = [];
-    private authors: IAuthor[] = [];
+    bookCreateRequest: IBookAddEditRequest = {};  
+    books: IBook[] = [];
+    authors: IAuthor[] = [];
 
     constructor(
         private _dialogDisplayService: DialogDisplayService,
