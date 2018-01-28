@@ -17,7 +17,7 @@
             <div class="ui-g ui-fluid" style="padding-right:250px;">
                 <div class="ui-g-6 ui-md-6" style="padding: 0 30px;">
                     <h3 class="drive-header">C:/</h3>
-                    <p-tree [value]="filesTreeC" selectionMode="single" [(selection)]="selectedFilesC" (onNodeSelect)="nodeSelect($event, 'driveC')" (onNodeUnselect)="nodeUnselect($event, 'driveC')"></p-tree>
+                    <p-tree [value]="filesTreeC" selectionMode="single" [(selection)]="selectedFilesC" (onNodeSelect)="nodeSelect($event, 'driveC')" (onNodeUnselect)="nodeUnSelect($event, 'driveC')"></p-tree>
                     <div class="driver-commands" *ngIf="selectedFilesC && tempC">
                         <div><button (click)="copyItem(selectedFilesC, tempC, 'driveC');">Copy <strong>{{tempC.label}}</strong> from D to <strong>{{tempD.label}}</strong></button></div>  
                         <div><button (click)="moveItem(selectedFilesC, tempC, 'driveC');">Move <strong>{{tempC.label}}</strong> from D to <strong>{{tempD.label}}</strong></button></div>                         
@@ -35,7 +35,7 @@
                 </div>
                 <div class="ui-g-6 ui-md-6" style="padding: 0 30px;">    
                     <h3 class="drive-header">D:/</h3>
-                    <p-tree [value]="filesTreeD" selectionMode="single" [(selection)]="selectedFilesD" (onNodeSelect)="nodeSelect($event, 'driveD')" (onNodeUnselect)="nodeUnselect($event, 'driveD')"></p-tree>
+                    <p-tree [value]="filesTreeD" selectionMode="single" [(selection)]="selectedFilesD" (onNodeSelect)="nodeSelect($event, 'driveD')" (onNodeUnselect)="nodeUnSelect($event, 'driveD')"></p-tree>
                     <div class="driver-commands" *ngIf="selectedFilesD && tempD">
                         <div><button (click)="copyItem(selectedFilesD, tempD, 'driveD');">Copy <strong>{{tempD.label}}</strong> from C to <strong>{{tempC.label}}</strong></button></div>
                         <div><button (click)="moveItem(selectedFilesD, tempD, 'driveD');">Move <strong>{{tempD.label}}</strong> from C to <strong>{{tempC.label}}</strong></button></div>
