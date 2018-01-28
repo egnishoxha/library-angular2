@@ -30,13 +30,13 @@ import { DialogDisplayService } from "./infrastructure/services/clientAPI/dialog
 import { UserService } from "./infrastructure/services/webAPI/user.service";
 import { AuthenticationService } from './infrastructure/services/clientAPI/authentication.service';
 import { LangService } from "./infrastructure/services/clientAPI/multi-lang.service";
-
-import { DataTableModule, DataListModule, EditorModule, CheckboxModule, RadioButtonModule, DataScrollerModule, FieldsetModule, SharedModule, InputTextModule, ButtonModule, DropdownModule, DialogModule, PanelModule, GrowlModule, MenuModule } from "primeng/primeng";
+import { TreeModule, DataTableModule, DataListModule, EditorModule, CheckboxModule, RadioButtonModule, DataScrollerModule, FieldsetModule, SharedModule, InputTextModule, ButtonModule, DropdownModule, DialogModule, PanelModule, GrowlModule, MenuModule } from "primeng/primeng";
 import { AuthorsComponent } from './components/authors/authors.component';
 import { AddAuthorFormComponent } from './directives/add-author-form/add-author-form.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddBookFormComponent } from './directives/add-book-form/add-book-form.component';
 import { BookDetailComponent } from './components/books/book-detail/book-detail.component';
+import { FileManagerComponent } from './components/file-manager/file-manager.component';
 
 // AoT requires an exported function for factories
 export function httpLoaderFactory(http: HttpClient) {
@@ -56,7 +56,8 @@ export function TranslateCacheFactory(translateService, translateCacheSettings) 
     AddAuthorFormComponent,
     RegisterComponent,
     AddBookFormComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    FileManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +81,8 @@ export function TranslateCacheFactory(translateService, translateCacheSettings) 
     }),
     routing,
     NoopAnimationsModule,
-    DataScrollerModule,  
+    DataScrollerModule,
+    TreeModule,  
     DataTableModule,
     DataListModule,
     CheckboxModule,

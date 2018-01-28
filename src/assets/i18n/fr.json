@@ -31,6 +31,7 @@
         "PAGE_NO": "No. de Pages",
         "LIT": "Littérature",
         "COPIES_NO":"Copies No.",
+        "GENDRE": "Genre",
         "LANGUAGE": "Langage"
       }
 }

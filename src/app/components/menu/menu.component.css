@@ -67,7 +67,7 @@
 
 #logout_ct {
     position: absolute;
-    top: 375px;
+    top: 450px;
     padding: 8px 12px;
     font-size: 24px;
     color: #ccc;
@@ -89,7 +89,7 @@
 
 #lang_ct {
     position: absolute;
-    top: 290px;
+    top: 470px;
     padding: 20px 12px;
     color: #ccc;
 }

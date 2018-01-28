@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
         this._authenticationService.logout();
         //Set return url
-        this.returnUrl = this._route.snapshot.queryParams["returnUrl"] || "/books";
+        this.returnUrl = this._route.snapshot.queryParams["returnUrl"] || "/files";
 
         this._langService.setLang(null);        
         this.userSearchRequest = {

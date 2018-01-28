@@ -10,7 +10,6 @@ import { UserService } from './../../infrastructure/services/webAPI/user.service
 import { DialogDisplayService } from "../../infrastructure/services/clientAPI/dialog-display.service";
 import { IBookAddEditRequest } from "./../../infrastructure/services/webAPI/BookAddEditRequest";
 
-
 @Component({
     selector: 'app-books',
     templateUrl: './books.component.html',
@@ -26,11 +25,12 @@ export class BooksComponent implements OnInit {
     currentUser: User;
     bookEditRequest: IBookAddEditRequest = {};  
     bookId: number;
-    
+
     constructor(
         public _userService: UserService,        
         public _dialogDisplayService: DialogDisplayService,
         public _confirmationService: ConfirmationService
+        
   ) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));    
   }
