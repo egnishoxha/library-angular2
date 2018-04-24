@@ -35,8 +35,7 @@ export class MenuComponent implements OnInit {
     loadRoutes(){
         this.routes = [
             {path: "/books", title: "Books", iconClass:"fa fa-book"},
-            {path: "/authors", title: "Authors", iconClass:"fa fa-user"},
-            {path: "/files", title: "File Manager", iconClass:"fa fa-file"}
+            {path: "/authors", title: "Authors", iconClass:"fa fa-user"}
         ];
     }
     
