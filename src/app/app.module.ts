@@ -36,7 +36,6 @@ import { AddAuthorFormComponent } from './directives/add-author-form/add-author-
 import { RegisterComponent } from './components/register/register.component';
 import { AddBookFormComponent } from './directives/add-book-form/add-book-form.component';
 import { BookDetailComponent } from './components/books/book-detail/book-detail.component';
-import { FileManagerComponent } from './components/file-manager/file-manager.component';
 
 // AoT requires an exported function for factories
 export function httpLoaderFactory(http: HttpClient) {
@@ -56,8 +55,7 @@ export function TranslateCacheFactory(translateService, translateCacheSettings) 
     AddAuthorFormComponent,
     RegisterComponent,
     AddBookFormComponent,
-    BookDetailComponent,
-    FileManagerComponent
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
